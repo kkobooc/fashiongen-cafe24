@@ -2,11 +2,6 @@
 .env
 __pycache__/
 
-/db/*
-!/db/
-
-/data/*
-!/data/
-
-/text/*
-!/text/
+!/db/.gitkeep
+!/data/.gitkeep
+!/text/.gitkeep
