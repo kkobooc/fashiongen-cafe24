@@ -1,9 +1,12 @@
 *.ipynb
 .env
+__pycache__/
 
 /db/*
 !/db/
+
 /data/*
 !/data/
+
 /text/*
 !/text/

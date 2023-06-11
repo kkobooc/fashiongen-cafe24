@@ -3,9 +3,12 @@ import requests
 from db_crud import *
 
 def get_auth(mallid, auth_code):
+    client_id_secret = f"{client_id}:{client_secret}"
+    encoded_bytes = base64.b64encode(client_id_secret.encode('utf-8'))
+    encoded_string = encoded_bytes.decode('utf-8')
     url = f'https://{mallid}.cafe24api.com/api/v2/oauth/token'
     headers = {
-        'Authorization': 'Basic SnNkMk4xTnRQRmZOenVwdXA5eDRyQzp3RHg2MEl3TU81UGtyVGpBejRqZlBB',
+        'Authorization': f'Basic {encoded_string}',
         'Content-Type': 'application/x-www-form-urlencoded'
     }
     data = {
