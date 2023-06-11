@@ -34,8 +34,8 @@ if __name__ == "__main__":
     
     # -- openai
     # 학습 데이터 준비
-    training_file_id = prepare_data(mallid)
+    # training_file_id = prepare_data(mallid)
     # 파인튜닝 모델 생성
-    fine_tune(mallid, training_file_id)
+    # fine_tune(mallid, training_file_id)
     # 모델 추론 진행
-    get_answer(prompt, model)
+    # get_answer(prompt, model)
