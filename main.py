@@ -7,9 +7,10 @@ from train import *
 # from train import *
 
 if __name__ == "__main__":
-    # print(sys.argv)
+    print(sys.argv)
     if len(sys.argv) != 2:
         print("Insufficient arguments")
+        sys.exit()
         
     mallid = sys.argv[1]
     
