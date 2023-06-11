@@ -1,0 +1,9 @@
+*.ipynb
+.env
+
+/db/*
+!/db/
+/data/*
+!/data/
+/text/*
+!/text/
