@@ -1,8 +1,9 @@
+import sys
 import base64
 import requests
 from db_crud import *
 
-def get_auth(mallid, auth_code):
+def get_auth(mallid, auth_code, client_id, client_secret):
     client_id_secret = f"{client_id}:{client_secret}"
     encoded_bytes = base64.b64encode(client_id_secret.encode('utf-8'))
     encoded_string = encoded_bytes.decode('utf-8')
@@ -47,3 +48,15 @@ def token_refresh(mallid, refresh_token, client_id, client_secret):
 
 def check_token_valid(mallid, access_token, refresh_token):
     pass
+
+if __name__ == "__main__":
+    print(sys.argv)
+    # if len(sys.argv) != 2:
+    #     print("Insufficient arguments")
+    #     sys.exit()
+    
+    version, client_id, client_secret, api_key = get_env()
+    mallid = sys.argv[1]
+    auth_code = sys.argv[2]
+    
+    get_auth(mallid, auth_code, client_id, client_secret)
