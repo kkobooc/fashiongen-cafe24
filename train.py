@@ -8,7 +8,7 @@ import signal
 def get_keyword(mallid, df, api_key):
     openai.api_key = api_key
     keyword_lst = []
-    for i, text in enumerate(df["refined_dscrption"]):
+    for i, text in enumerate(df["refined_description"]):
         idx = i+1
         # print(prompt)
         while True:
@@ -16,7 +16,8 @@ def get_keyword(mallid, df, api_key):
                 response = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=[
-                        {"role": "system", "content": "텍스트에서 약 10개에서 15개의 주요 한국어 디자인 키워드를 뽑아 콤마로 나열해줘."},
+                        # {"role": "system", "content": "텍스트에서 약 10개에서 15개의 주요 한국어 디자인 키워드를 뽑아 콤마로 나열해줘."},
+                        {"role": "system", "content": "텍스트에서 약 10개의 주요 한국어 디자인 키워드를 뽑아 콤마로 나열해줘."},
                         {"role": "user", "content": text}
                     ]
                 )
